@@ -11,18 +11,18 @@ let what = ['my homework', 'my phone', 'the car'];
 let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
 
-  function numeroAleatorio(min, max){
-    return Math.floor(Math.random() + (min - max) + min);
+  function numeroAleatorio( max){
+    return Math.floor(Math.random()* max);
   }
   function obtenerNumero(aleatorio){
     let max = aleatorio.length -1;
-    let min = 0
-    let numero = numeroAleatorio(min,max);
+    
+    let numero = numeroAleatorio(max);
     return aleatorio[numero];
   }
 
   window.onload = function () {
   //write your code here
   console.log("Hello Rigo from the console!");
-  document.getElementById('#excuse').innerHTML = obtenerNumero(who) + " " + obtenerNumero(action) + " " + obtenerNumero(what) + " " + obtenerNumero(when);
+  document.getElementById('excuse').innerHTML = obtenerNumero(who) + " " + obtenerNumero(action) + " " + obtenerNumero(what) + " " + obtenerNumero(when);
 };
