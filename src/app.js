@@ -10,19 +10,18 @@ let action = ['ate', 'peed', 'crushed', 'broke'];
 let what = ['my homework', 'my phone', 'the car'];
 let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
 
+//cambio nombres de variables de español a ingles, di formato al codigo, elimine comentarios innecesarios//
+function randomNum(max) {
+  return Math.floor(Math.random() * max);
+}
+function getNumber(random) {
+  let max = random.length - 1;
 
-  function numeroAleatorio( max){
-    return Math.floor(Math.random()* max);
-  }
-  function obtenerNumero(aleatorio){
-    let max = aleatorio.length -1;
-    
-    let numero = numeroAleatorio(max);
-    return aleatorio[numero];
-  }
+  let num = randomNum(max);
+  return random[num];
+}
+window.onload = function () {
 
-  window.onload = function () {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-  document.getElementById('excuse').innerHTML = obtenerNumero(who) + " " + obtenerNumero(action) + " " + obtenerNumero(what) + " " + obtenerNumero(when);
+
+  document.getElementById('excuse').innerHTML = getNumber(who) + " " + getNumber(action) + " " + getNumber(what) + " " + getNumber(when);
 };
